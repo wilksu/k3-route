@@ -68,6 +68,16 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
+    - name: Load argon theme package
+      run: cd openwrt/package && git clone https://github.com/jerrykuku/luci-theme-argon.git -b v2.2.5
+
+    - name: Load ssr package
+      run: cd openwrt/package && git clone https://github.com/fw876/helloworld.git
+
+    - name: Load lean package
+      run: git clone https://github.com/coolsnowwolf/lede/
+      run: mv lede/package/lean openwrt/package/
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
