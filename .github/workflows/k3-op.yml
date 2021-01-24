@@ -75,8 +75,7 @@ jobs:
       run: cd openwrt/package && git clone https://github.com/fw876/helloworld.git
 
     - name: Load lean package
-      run: git clone https://github.com/coolsnowwolf/lede/
-      run: mv lede/package/lean openwrt/package/
+      run: git clone https://github.com/coolsnowwolf/lede/ && mv lede/package/lean openwrt/package/
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
